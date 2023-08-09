@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 레이아웃1</title>
+    <link href="css/039.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="inner">
+            <h1>
+                <a href="#">
+                    <img src="img/icons8-sketch-100.png" alt="로고" />
+                </a>
+            </h1>
+            <div class="menu_icon">
+                <img src="img/menu_icon_2.png" alt="메뉴보기" />
+            </div><!-- menu_icon end -->
+        </div><!-- inner end -->
+    </header>
+    <section class="main_visual">
+        <img src="img/img02.jpg" alt="" />
+    </section><!-- main_visual end -->
+
+    <section class="cont01">
+        <div class="list">
+            <div class="item item1">
+                <figure>
+                    <img id="item_img01" src="img/img03.jpg" alt="" />
+                </figure>
+                <div>
+                    <h4>[하동] 당일 #쌍계사10리벚꽃길 #화개장터 #벚꽃여행</h4>
+                    <p>한국관광공사가 추천하는, 눈부신 4월의 설원과 같이 흩날리는 벚꽃의 쌍계사10리벚꽃길과 화개장터를 둘러보는 하동 당일 봄 여행 상품입니다.</p>
+                    <strong>41,900원~</strong>
+                    <button id="btn01">다른이미지보기</button>
+                </div>
+            </div><!-- item end -->
+
+            <div class="item ite">
+                <figure>
+                    <img id="item_img02" src="img/bg-05.jpg" alt="" />
+                </figure>
+                <div>
+                    <h4>[제주] 핫플레이스 3일 #산양큰엉곶 #수목원야시장 #사려니숲길</h4>
+                    <p>레트로 감성의 미디어아트 노형슈퍼마켙을 비롯하여 사려니숲길 등 제주 핫플 관광지를 둘러봅니다. 제주 특유의 제주도 근고기 및 특식을 즐기실 수 있습니다.</p>
+                    <strong>319,000원~</strong>
+                    <button id="btn02">다른이미지보기</button>
+                </div>
+            </div><!-- item end -->
+
+        </div><!-- list end -->
+    </section><!-- cont01 end -->
+
+    <section class="cont02">
+        <div class="inner">
+            <figure>
+                <img src="img/img05.jpg" alt="" />
+            </figure>
+            <div>
+                <h4>꿈을 담은 특별한 여행</h4>
+                <p>떠나고 싶은 마음에게 쉽게 답을 드리는<br />여행이지와 함께 특별한 경험을 시작하세요.</p>
+                <button>이미지보기 <span>1</span>/3</button>
+            </div>
+        </div><!-- .inner end -->
+    </section><!-- cont02 end -->
+
+
+    <script>
+        //다른이미지보기 버튼한테 마우스올렸을 때 이미지 변경
+        let btn01 = document.getElementById('btn01');
+        let itemImg01 = document.getElementById('item_img01');
+
+        btn01.onmouseenter = function(){
+            itemImg01.src = 'img/yellow01.jpg';
+            itemImg01.style.transform = 'scale(0.8)'; 
+            itemImg01.style.transition = '2s';
+        } 
+        //btn01마우스 벗어났을 때 
+        //이미지 변경, 크기변경  
+        btn01.onmouseleave = function(){
+            itemImg01.src = 'img/img03.jpg';
+            itemImg01.style.transform = 'scale(1)';
+            itemImg01.style.transition = '2s';
+        }
+
+        
+        let btn02 = document.getElementById('btn02');
+        let itemImg02 = document.getElementById('item_img02');        
+        //두번째 버튼한테 마우스 올렸을 때
+        btn02.onmouseenter = function(){
+            itemImg02.src = 'img/img04-1.jpg';
+            itemImg02.style.transform = 'scale(0.8)';
+            itemImg02.style.transition = '2s';
+        }
+        //두번째 버튼한테 마우스 벗어났을 때
+        btn02.onmouseleave = function(){
+            itemImg02.src = 'img/bg-05.jpg';
+            itemImg02.style.transform = 'scale(1)';  
+        }
+
+        //버튼 클릭시 이미지 변경
+        let img01 = 'img/img05.jpg';
+        let img02 = 'img/img06.jpg';
+        let img03 = 'img/img07.jpg';
+        let imgList = [img01, img02, img03];
+
+        let numList = [1, 2, 3];
+
+        let cont02 = document.getElementsByClassName('cont02')[0];    
+        let cont02Img = cont02.getElementsByTagName('img')[0];   
+        let cont02Btn = cont02.getElementsByTagName('button')[0];
+        let cont02Num = cont02.getElementsByTagName('span')[0];
+
+        let i = 0;
+
+        cont02Btn.onclick = function(){
+            i++; //1, 2, 3, 4, .....
+            //imgList.length => 3
+
+            if(i >= imgList.length) {
+                i = 0;
+            } 
+            cont02Img.src = imgList[i];
+            cont02Num.innerText = numList[i];
+        }
+    </script>
+</body>
+</html>

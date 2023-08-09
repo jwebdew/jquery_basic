@@ -1,0 +1,139 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {list-style: none;}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+body {
+    color: #333;
+    line-height: 1;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+header .inner {
+    width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+header .inner h1 a img {
+    width: 50px;
+}
+
+.main_visual {
+    height: 100vh;
+}
+.main_visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 🍀.cont01 */
+.cont01 .list .item {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+
+}
+.cont01 .list .item figure {
+    width: 50%;
+    height: 100%;
+}
+.cont01 .list .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont01 .list .item div {
+    width: 50%;
+    padding: 0 120px;
+}
+.cont01 .list .item div h4 {
+    font-size: 50px;
+    line-height: 1.3;
+    word-break: keep-all;
+}
+.cont01 .list .item div p {
+    font-size: 22px;
+    line-height: 1.3;
+    /* 여백 : 위로 20px 아래로 80px */
+    margin: 20px 0 80px;
+
+}
+.cont01 .list .item div strong {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 20px;
+}
+.cont01 .list .item div button {
+    width: 150px;
+    height: 40px;
+    border: 0;
+    border-radius: 5px;
+    background-color: palevioletred;
+    color: #fff;
+    box-shadow: 5px 5px 10px rgba(216, 112, 147, 0.689);
+}
+.cont01 .list .item:nth-child(2) div {
+    order: -1;
+}
+
+/* .cont02 */
+.cont02 {
+    background-color: #fcf9dd;
+    padding: 200px 0;
+}
+.cont02 .inner {
+    width: 1600px;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    /* justify-content: space-between; */
+}
+.cont02 .inner figure {
+    width: 50%;
+    height: 100%;
+}
+.cont02 .inner figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont02 .inner div {
+    width: 50%;
+    padding: 100px;
+}
+.cont02 .inner div h4 {
+    font-size: 50px;
+}
+.cont02 .inner div p {
+    font-size: 22px;
+    line-height: 1.3;
+    margin: 20px 0 80px;
+}
+.cont02 .inner div button {
+    background-color: royalblue;
+    color: #fff;
+    border: 0;
+    padding: 10px 30px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(65, 105, 225, 0.643);
+
+}
+
